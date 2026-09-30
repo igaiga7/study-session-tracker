@@ -13,7 +13,7 @@ public class StudySession{
         return subject;
     }
 
-    public int minutes(){
+    public int getMinutes(){
         return minutes;
     }
 }
