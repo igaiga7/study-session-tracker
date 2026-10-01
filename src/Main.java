@@ -24,5 +24,7 @@ public class Main{
         
         //print total minutes studied: 
         System.out.println("Total study time: " + studyTracker.getTotalMinutes());
+
+        System.out.println(studyTracker.getMinutesBySubject("Java"));
     }
 }

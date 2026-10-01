@@ -26,5 +26,14 @@ public int getTotalMinutes(){
     return minutesTotal;
 }
 
+public int getMinutesBySubject(String subject){
+    int minutesTotalBySubject = 0;
+    for(StudySession studySession : studySessions){
+        if (subject.equals(studySession.getSubject())){
+            minutesTotalBySubject += studySession.getMinutes();
+        }
+    }
+    return minutesTotalBySubject;
+}
 }
 
