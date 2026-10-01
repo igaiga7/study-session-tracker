@@ -18,5 +18,13 @@ public void displayStudyTracker(){
     }
 }
 
+public int getTotalMinutes(){
+    int minutesTotal = 0;
+    for(StudySession studySession : studySessions){
+        minutesTotal += studySession.getMinutes();
+    }
+    return minutesTotal;
+}
+
 }
 

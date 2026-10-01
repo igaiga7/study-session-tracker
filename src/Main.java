@@ -21,6 +21,8 @@ public class Main{
 
         //display study tracker
         studyTracker.displayStudyTracker();
-
+        
+        //print total minutes studied: 
+        System.out.println("Total study time: " + studyTracker.getTotalMinutes());
     }
 }
