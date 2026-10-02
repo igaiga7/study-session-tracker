@@ -35,5 +35,26 @@ public int getMinutesBySubject(String subject){
     }
     return minutesTotalBySubject;
 }
+
+    public int countStudySessions(){
+        int studySessionCount = 0;
+        for(StudySession studySession : studySessions){
+            studySessionCount += 1;
+        }
+        return studySessionCount;
+    }
+
+    public StudySession getLongestStudySession(){
+        if (studySessions.isEmpty()) {
+        return null;
+    }
+        StudySession longest = studySessions.get(0);
+        for (StudySession studySession : studySessions){
+            if (studySession.getMinutes() > longest.getMinutes()){
+                longest = studySession;
+            }
+        }
+        return longest;
+    }
 }
 

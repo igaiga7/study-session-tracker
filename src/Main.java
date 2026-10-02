@@ -26,5 +26,11 @@ public class Main{
         System.out.println("Total study time: " + studyTracker.getTotalMinutes());
 
         System.out.println(studyTracker.getMinutesBySubject("Java"));
+
+        //Count all the sessions in progress:
+        System.out.println(studyTracker.countStudySessions());
+
+        //Print out the longest study session:
+        System.out.println("The longest study session is " + studyTracker.getLongestStudySession().getSubject() + " and it is " + studyTracker.getLongestStudySession().getMinutes() + " minutes.");
     }
 }
