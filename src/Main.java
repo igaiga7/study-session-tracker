@@ -1,36 +1,38 @@
+import java.util.Scanner;
+
 public class Main{
     public static void main(String[] args){
         
-        //Initialize study sessions
+       //create study tracker
+       StudyTracker studyTracker = new StudyTracker();
 
-        StudySession studySession = new StudySession("Java", 60);
-    
+       //create running Scanner
+       Scanner input = new Scanner(System.in);
 
-        StudySession studySession2 = new StudySession("Mathematics", 40);
+       //create running boolean
+       boolean running = true;
 
-        StudySession studySession3 = new StudySession("Robotics", 50);
+       //while loop with menu
+       while(running){
+        int choice = input.nextInt();
+        System.out.println("=== STUDY TRACKER ===\n" + //
+                        "\n" + //
+                        "1. Add study session\n" + //
+                        "2. View all sessions\n" + //
+                        "3. View total study time\n" + //
+                        "4. View study time by subject\n" + //
+                        "5. View statistics\n" + //
+                        "6. Exit");
+        if(choice == 6){
+            running = false;
+        }else if(choice == 1){
+            
+            studyTracker.addStudySession(null);
+        }
+       }
 
-        //initialize study tracker
-        StudyTracker studyTracker = new StudyTracker();
+       input.close();
 
 
-        //Add study sessions to tracker
-        studyTracker.addStudySession(studySession);
-        studyTracker.addStudySession(studySession2);
-        studyTracker.addStudySession(studySession3);
-
-        //display study tracker
-        studyTracker.displayStudyTracker();
-        
-        //print total minutes studied: 
-        System.out.println("Total study time: " + studyTracker.getTotalMinutes());
-
-        System.out.println(studyTracker.getMinutesBySubject("Java"));
-
-        //Count all the sessions in progress:
-        System.out.println(studyTracker.countStudySessions());
-
-        //Print out the longest study session:
-        System.out.println("The longest study session is " + studyTracker.getLongestStudySession().getSubject() + " and it is " + studyTracker.getLongestStudySession().getMinutes() + " minutes.");
     }
 }
