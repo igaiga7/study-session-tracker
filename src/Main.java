@@ -33,11 +33,16 @@ public class Main{
                 System.out.println("Enter subject: ");
                 String subject = input.nextLine();
                 System.out.println("Enter minutes: ");
+                if(!input.hasNextInt()){
+                    System.out.println("Invalid input. Enter a number.");
+                    input.nextLine();
+                }else{
                 int minutes = input.nextInt();
                 input.nextLine();
-
+                
             try {
                 StudySession newSession = new StudySession(subject, minutes);
+            
 
                 studyTracker.addStudySession(newSession);
                 System.out.println("New study session added!");
