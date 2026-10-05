@@ -23,9 +23,11 @@ public class Main{
                         "5. View statistics\n" + //
                         "6. Exit");
         
-        int choice = input.nextInt();
+        
+        if(input.hasNextInt()){
+            int choice = input.nextInt();
         input.nextLine();
-
+        
         switch(choice){
             case 1:
                 System.out.println("Enter subject: ");
@@ -82,7 +84,11 @@ public class Main{
             default:
                 System.out.println("Invalid option. Enter a number from 1 to 6.");
         }
+       }else{
+         System.out.println("Please enter a number from 1 to 6.");
+    input.nextLine();
        }
+    }
 
        input.close();
 
