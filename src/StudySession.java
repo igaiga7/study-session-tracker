@@ -7,6 +7,9 @@ public class StudySession{
         if (minutes <= 0){
             throw new IllegalArgumentException("Minutes must be greater than 0.");
         }
+        if(subject == null || subject.isBlank()){
+            throw new IllegalArgumentException("Please enter a subject name");
+        }
         this.subject = subject;
         this.minutes = minutes;
     }

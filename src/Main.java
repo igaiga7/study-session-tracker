@@ -39,16 +39,15 @@ public class Main{
                 }else{
                 int minutes = input.nextInt();
                 input.nextLine();
-                
             try {
                 StudySession newSession = new StudySession(subject, minutes);
-            
 
                 studyTracker.addStudySession(newSession);
                 System.out.println("New study session added!");
             } catch (IllegalArgumentException e){
                 System.out.println(e.getMessage());
             }
+        }
                 break;
             
             case 2:
